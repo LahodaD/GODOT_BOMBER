@@ -1,0 +1,5 @@
+[gd_scene format=3 uid="uid://byvcqnokqhen5"]
+
+[node name="Stone" type="Panel"]
+offset_right = 50.0
+offset_bottom = 50.0

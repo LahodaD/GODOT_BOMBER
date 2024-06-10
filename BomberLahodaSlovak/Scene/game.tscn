@@ -1,0 +1,8 @@
+[gd_scene load_steps=2 format=3 uid="uid://dvfcxx5dtp4c6"]
+
+[ext_resource type="Script" path="res://Scripts/Background.cs" id="1_2l10v"]
+
+[node name="Game" type="Node"]
+
+[node name="Background" type="Sprite2D" parent="."]
+script = ExtResource("1_2l10v")
