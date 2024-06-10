@@ -1,0 +1,14 @@
+[gd_scene load_steps=2 format=3 uid="uid://rd0mqp3xhwoq"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_glmdk"]
+border_width_left = 1
+border_width_top = 1
+border_width_right = 1
+border_width_bottom = 1
+border_color = Color(0.054902, 0.054902, 0.054902, 1)
+
+[node name="BreakStone" type="Panel"]
+z_index = 5
+offset_right = 50.0
+offset_bottom = 50.0
+theme_override_styles/panel = SubResource("StyleBoxFlat_glmdk")

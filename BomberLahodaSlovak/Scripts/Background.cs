@@ -1,45 +1,79 @@
 using Godot;
 using System;
+using System.Collections.Generic;
 
 public partial class Background : Sprite2D
 {
 	private int cellSize = 100;
+	private int mapWidth = 11 * 100;  // Šířka mapy
+	private int mapHeight = 7 * 100;  // Výška mapy
 	private RandomNumberGenerator _rng = new RandomNumberGenerator();
 	
-	private System.Collections.Generic.List<Vector2> stoneList = new System.Collections.Generic.List<Vector2>();
-	
-	
-	private Vector2 GenerateRandomPosition() {
-		float x = _rng.RandfRange(0, 200);
-		float y = _rng.RandfRange(0, 150);
-		return new Vector2(x,y);
-	}
-	
-	private void GenerateStone(int countOfStone){
-		for(int row = 0; row < 7; row++) {
-			for(int col = 0; col < 11; col++) {
-				//Vector2 pos = GenerateRandomPosition();
-				
+	private List<Vector2> stoneList = new List<Vector2>();
+	private List<Vector2> breakStoneList = new List<Vector2>();
+
+	private void GenerateStone() {
+		for (int row = 0; row < 7; row++) {
+			for (int col = 0; col < 11; col++) {
 				Vector2 pos = new Vector2(col * cellSize + cellSize / 2, row * cellSize + cellSize / 2);
 				stoneList.Add(pos);
 				
 				PackedScene stoneScene = (PackedScene)ResourceLoader.Load("res://Scene/Stone.tscn");
 				Panel stoneItem = (Panel)stoneScene.Instantiate();
-				stoneItem.Position = (pos);
+				stoneItem.Position = pos;
 				AddChild(stoneItem);
 			}
 		}
 	}
 	
-	// Called when the node enters the scene tree for the first time.
-	public override void _Ready()
-	{
-		GenerateStone(10);
+	private void GenerateBreakStone(int countOfBreakStone) {
+		List<Vector2> freePositions = new List<Vector2>();
+
+		// Najdi volné pozice mezi kameny
+		for (int row = 0; row < 7*2; row++) {
+			for (int col = 0; col < 11*2; col++) {
+				// Kontrolujeme čtyři možné pozice kolem každého kamene (nahoře, dole, vlevo, vpravo)
+				Vector2[] possiblePositions = new Vector2[] {
+					new Vector2(col * cellSize/2 + cellSize / 2 - cellSize / 2, row * cellSize/2 + cellSize / 2),
+					new Vector2(col * cellSize/2 + cellSize / 2 + cellSize / 2, row * cellSize/2 + cellSize / 2),
+					new Vector2(col * cellSize/2 + cellSize / 2, row * cellSize/2 + cellSize / 2 - cellSize / 2),
+					new Vector2(col * cellSize/2 + cellSize / 2, row * cellSize/2 + cellSize / 2 + cellSize / 2)
+				};
+
+				foreach (var pos in possiblePositions) {
+					if (!stoneList.Contains(pos) && pos.X >= 0 && pos.Y >= 0 && pos.X < mapWidth && pos.Y < mapHeight) {
+						freePositions.Add(pos);
+					}
+				}
+			}
+		}
+
+		// Náhodně vyber pozice pro BreakStones
+		for (int i = 0; i < countOfBreakStone; i++) {
+			if (freePositions.Count == 0) {
+				GD.Print("No more free positions available for BreakStones.");
+				break;
+			}
+
+			int index = _rng.RandiRange(0, freePositions.Count - 1);
+			Vector2 breakStonePos = freePositions[index];
+			freePositions.RemoveAt(index);
+
+			breakStoneList.Add(breakStonePos);
+
+			PackedScene breakStoneScene = (PackedScene)ResourceLoader.Load("res://Scene/BreakStone.tscn");
+			Panel breakStoneItem = (Panel)breakStoneScene.Instantiate();
+			breakStoneItem.Position = breakStonePos;
+			AddChild(breakStoneItem);
+		}
 	}
 
-	// Called every frame. 'delta' is the elapsed time since the previous frame.
-	public override void _Process(double delta)
-	{
-		
+	public override void _Ready() {
+		GenerateStone();
+		GenerateBreakStone(200); // Generuje 10 rozbitných kamenů
+	}
+
+	public override void _Process(double delta) {
+		// Zpracování každý snímek, pokud je potřeba
 	}
 }
