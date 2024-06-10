@@ -71,6 +71,8 @@ public partial class Background : Sprite2D
 	public override void _Ready() {
 		GenerateStone();
 		GenerateBreakStone(200); // Generuje 10 rozbitných kamenů
+		
+		
 	}
 
 	public override void _Process(double delta) {
