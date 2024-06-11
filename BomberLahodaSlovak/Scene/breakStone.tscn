@@ -1,14 +1,23 @@
-[gd_scene load_steps=2 format=3 uid="uid://rd0mqp3xhwoq"]
+[gd_scene load_steps=3 format=3 uid="uid://rd0mqp3xhwoq"]
 
-[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_glmdk"]
-border_width_left = 1
-border_width_top = 1
-border_width_right = 1
-border_width_bottom = 1
-border_color = Color(0.054902, 0.054902, 0.054902, 1)
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_mxp1b"]
+size = Vector2(50, 50)
 
-[node name="BreakStone" type="Panel"]
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_2txgg"]
+border_width_left = 2
+border_width_top = 2
+border_width_right = 2
+border_width_bottom = 2
+border_color = Color(0.0110876, 0.0110876, 0.0110876, 1)
+
+[node name="BreakStone" type="CharacterBody2D"]
 z_index = 5
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(25, 25)
+shape = SubResource("RectangleShape2D_mxp1b")
+
+[node name="Panel" type="Panel" parent="."]
 offset_right = 50.0
 offset_bottom = 50.0
-theme_override_styles/panel = SubResource("StyleBoxFlat_glmdk")
+theme_override_styles/panel = SubResource("StyleBoxFlat_2txgg")

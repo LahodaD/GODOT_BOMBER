@@ -1,4 +1,4 @@
-[gd_scene load_steps=6 format=3 uid="uid://dvfcxx5dtp4c6"]
+[gd_scene load_steps=8 format=3 uid="uid://dvfcxx5dtp4c6"]
 
 [ext_resource type="Script" path="res://Scripts/Background.cs" id="1_2l10v"]
 [ext_resource type="Script" path="res://Scripts/PlayerScript.cs" id="2_r23k3"]
@@ -6,21 +6,36 @@
 [ext_resource type="Script" path="res://Scripts/Player2Script.cs" id="4_5okkm"]
 [ext_resource type="Texture2D" uid="uid://c0uclwnyoor6i" path="res://Image/bomb_red.png" id="4_emkn5"]
 
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_sqbli"]
+size = Vector2(42, 40)
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_xjomj"]
+radius = 22.0227
+
 [node name="Game" type="Node"]
 
 [node name="Background" type="Sprite2D" parent="."]
 script = ExtResource("1_2l10v")
 
 [node name="Player" type="CharacterBody2D" parent="."]
+position = Vector2(25, 25)
 script = ExtResource("2_r23k3")
 
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Player"]
+position = Vector2(1, -1)
+shape = SubResource("RectangleShape2D_sqbli")
+
 [node name="Sprite2D" type="Sprite2D" parent="Player"]
-position = Vector2(144, 55)
+scale = Vector2(0.35, 0.35)
 texture = ExtResource("3_m887i")
 
 [node name="Player2" type="CharacterBody2D" parent="."]
+position = Vector2(1124, 614)
 script = ExtResource("4_5okkm")
 
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Player2"]
+shape = SubResource("CircleShape2D_xjomj")
+
 [node name="Sprite2D" type="Sprite2D" parent="Player2"]
-position = Vector2(820, 70)
+scale = Vector2(0.2, 0.2)
 texture = ExtResource("4_emkn5")

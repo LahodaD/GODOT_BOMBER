@@ -19,7 +19,7 @@ public partial class Background : Sprite2D
 				stoneList.Add(pos);
 				
 				PackedScene stoneScene = (PackedScene)ResourceLoader.Load("res://Scene/Stone.tscn");
-				Panel stoneItem = (Panel)stoneScene.Instantiate();
+				CharacterBody2D stoneItem = (CharacterBody2D)stoneScene.Instantiate();
 				stoneItem.Position = pos;
 				AddChild(stoneItem);
 			}
@@ -62,7 +62,7 @@ public partial class Background : Sprite2D
 			breakStoneList.Add(breakStonePos);
 
 			PackedScene breakStoneScene = (PackedScene)ResourceLoader.Load("res://Scene/BreakStone.tscn");
-			Panel breakStoneItem = (Panel)breakStoneScene.Instantiate();
+			CharacterBody2D breakStoneItem = (CharacterBody2D)breakStoneScene.Instantiate();
 			breakStoneItem.Position = breakStonePos;
 			AddChild(breakStoneItem);
 		}
