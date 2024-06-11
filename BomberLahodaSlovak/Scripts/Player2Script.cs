@@ -17,6 +17,17 @@ public partial class Player2Script : CharacterBody2D
 		
 		Vector2 inputDirection = Input.GetVector("left2", "right2", "up2", "down2");
 		Velocity = inputDirection * Speed;
+		
+		if (Input.IsActionJustPressed("putBomb2")) {
+			CreateBomb();
+		}
+	}
+	
+	private void CreateBomb() {
+		PackedScene bombScene = (PackedScene)ResourceLoader.Load("res://Scene/bomb.tscn");
+		CharacterBody2D bombItem = (CharacterBody2D)bombScene.Instantiate();
+		bombItem.Position = Position;
+		Owner.AddChild(bombItem);
 	}
 
 	public override void _PhysicsProcess(double delta)
