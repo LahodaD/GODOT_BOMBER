@@ -26,6 +26,7 @@ position = Vector2(1, -1)
 shape = SubResource("RectangleShape2D_sqbli")
 
 [node name="Sprite2D" type="Sprite2D" parent="Player"]
+position = Vector2(1, -1)
 scale = Vector2(0.35, 0.35)
 texture = ExtResource("3_m887i")
 
@@ -37,5 +38,5 @@ script = ExtResource("4_5okkm")
 shape = SubResource("CircleShape2D_xjomj")
 
 [node name="Sprite2D" type="Sprite2D" parent="Player2"]
-scale = Vector2(0.2, 0.2)
+scale = Vector2(0.23, 0.23)
 texture = ExtResource("4_emkn5")
