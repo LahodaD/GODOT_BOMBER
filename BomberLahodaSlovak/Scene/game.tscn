@@ -6,8 +6,9 @@
 [ext_resource type="Script" path="res://Scripts/Player2Script.cs" id="4_5okkm"]
 [ext_resource type="Texture2D" uid="uid://dpbvoa0yqng04" path="res://Image/player2.png" id="5_c8xmw"]
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_sqbli"]
-size = Vector2(42, 40)
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_ltwm0"]
+radius = 20.25
+height = 54.0
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_xjomj"]
 radius = 22.0227
@@ -19,16 +20,23 @@ script = ExtResource("1_2l10v")
 
 [node name="Player" type="CharacterBody2D" parent="."]
 position = Vector2(25, 25)
+scale = Vector2(0.8, 0.8)
 script = ExtResource("2_r23k3")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Player"]
-position = Vector2(1, -1)
-shape = SubResource("RectangleShape2D_sqbli")
+position = Vector2(1, -7)
+shape = SubResource("CapsuleShape2D_ltwm0")
 
 [node name="Sprite2D" type="Sprite2D" parent="Player"]
 position = Vector2(1, -9)
 scale = Vector2(0.226563, 0.21875)
 texture = ExtResource("3_fpax7")
+
+[node name="Timer" type="Timer" parent="Player"]
+wait_time = 5.0
+
+[node name="explosionTimer" type="Timer" parent="Player"]
+wait_time = 2.0
 
 [node name="Player2" type="CharacterBody2D" parent="."]
 position = Vector2(1124, 614)
@@ -41,3 +49,6 @@ shape = SubResource("CircleShape2D_xjomj")
 position = Vector2(2, -10)
 scale = Vector2(0.227, 0.227)
 texture = ExtResource("5_c8xmw")
+
+[connection signal="timeout" from="Player/Timer" to="Player" method="OnBombTimerTimeout"]
+[connection signal="timeout" from="Player/explosionTimer" to="Player" method="OnExplTimerTimeout"]

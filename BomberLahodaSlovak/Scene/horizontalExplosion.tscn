@@ -1,0 +1,8 @@
+[gd_scene load_steps=2 format=3 uid="uid://cnpe000jebevn"]
+
+[ext_resource type="Texture2D" uid="uid://dulufa8wi7ntm" path="res://Image/explosion_horizontal.png" id="1_p52lh"]
+
+[node name="HorizontalExplosion" type="Sprite2D"]
+position = Vector2(25, 25)
+scale = Vector2(0.2, 0.2)
+texture = ExtResource("1_p52lh")
