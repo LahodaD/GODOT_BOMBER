@@ -13,7 +13,6 @@ border_width_bottom = 2
 border_color = Color(0.231373, 0.231373, 0.231373, 1)
 
 [node name="BreakStone" type="CharacterBody2D"]
-z_index = 5
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 position = Vector2(25, 25)
