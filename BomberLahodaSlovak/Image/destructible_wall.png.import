@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://bu1p2pcm61rvt"
-path="res://.godot/imported/bomb_red.png-425877439ef640677d2f88df09afe444.ctex"
+uid="uid://bihcxj7bi3ybl"
+path="res://.godot/imported/destructible_wall.png-a1d74cc0386b9aeb429b3316b3b3ea92.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Image/bomb_red.png"
-dest_files=["res://.godot/imported/bomb_red.png-425877439ef640677d2f88df09afe444.ctex"]
+source_file="res://Image/destructible_wall.png"
+dest_files=["res://.godot/imported/destructible_wall.png-a1d74cc0386b9aeb429b3316b3b3ea92.ctex"]
 
 [params]
 

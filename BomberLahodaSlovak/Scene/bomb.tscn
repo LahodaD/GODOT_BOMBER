@@ -1,15 +1,75 @@
-[gd_scene load_steps=3 format=3 uid="uid://b1oamgu0btudu"]
+[gd_scene load_steps=10 format=3 uid="uid://b1oamgu0btudu"]
 
-[ext_resource type="Texture2D" uid="uid://bpsjlwhtlxcvv" path="res://Image/bomb_default.png" id="1_he8lp"]
+[ext_resource type="Texture2D" uid="uid://cnwqdcn4ghhuj" path="res://Image/bomb_default.png" id="1_he8lp"]
+[ext_resource type="Texture2D" uid="uid://p15ju3qiel4" path="res://Image/bomb_yellow.png" id="2_wbn3s"]
+[ext_resource type="Texture2D" uid="uid://bj0fkja0o2o70" path="res://Image/bomb_orange.png" id="3_3im6b"]
+[ext_resource type="Texture2D" uid="uid://bu1p2pcm61rvt" path="res://Image/bomb_red.png" id="4_klq1f"]
+[ext_resource type="Texture2D" uid="uid://cstvhvt12jsht" path="res://Image/bomb_signal.png" id="5_kjjuu"]
+[ext_resource type="Texture2D" uid="uid://b3b80vwmx6aoh" path="res://Image/bomb_ready.png" id="6_ggdwh"]
+[ext_resource type="Texture2D" uid="uid://c2xe8f6hf63qc" path="res://Image/bomb_explosion.png" id="7_e0ekk"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_6fd0o"]
 radius = 26.3059
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_w6pfi"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("1_he8lp")
+}, {
+"duration": 1.0,
+"texture": ExtResource("2_wbn3s")
+}, {
+"duration": 1.0,
+"texture": ExtResource("1_he8lp")
+}, {
+"duration": 1.0,
+"texture": ExtResource("2_wbn3s")
+}, {
+"duration": 1.0,
+"texture": ExtResource("1_he8lp")
+}, {
+"duration": 1.0,
+"texture": ExtResource("2_wbn3s")
+}, {
+"duration": 1.0,
+"texture": ExtResource("3_3im6b")
+}, {
+"duration": 1.0,
+"texture": ExtResource("2_wbn3s")
+}, {
+"duration": 0.5,
+"texture": ExtResource("3_3im6b")
+}, {
+"duration": 1.0,
+"texture": ExtResource("2_wbn3s")
+}, {
+"duration": 0.5,
+"texture": ExtResource("3_3im6b")
+}, {
+"duration": 1.0,
+"texture": ExtResource("4_klq1f")
+}, {
+"duration": 1.0,
+"texture": ExtResource("5_kjjuu")
+}, {
+"duration": 1.0,
+"texture": ExtResource("6_ggdwh")
+}, {
+"duration": 1.0,
+"texture": ExtResource("7_e0ekk")
+}],
+"loop": true,
+"name": &"default",
+"speed": 3.0
+}]
 
 [node name="Bomb" type="CharacterBody2D"]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 shape = SubResource("CircleShape2D_6fd0o")
 
-[node name="Sprite2D" type="Sprite2D" parent="."]
-scale = Vector2(0.25, 0.25)
-texture = ExtResource("1_he8lp")
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+position = Vector2(0, 2.38419e-07)
+scale = Vector2(0.2, 0.198)
+sprite_frames = SubResource("SpriteFrames_w6pfi")

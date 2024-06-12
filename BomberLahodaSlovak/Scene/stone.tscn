@@ -1,4 +1,6 @@
-[gd_scene load_steps=2 format=3 uid="uid://byvcqnokqhen5"]
+[gd_scene load_steps=3 format=3 uid="uid://byvcqnokqhen5"]
+
+[ext_resource type="Texture2D" uid="uid://rqqfjhi74k1u" path="res://Image/inner_walls.png" id="1_0bxuw"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_88ka3"]
 size = Vector2(50, 50)
@@ -12,3 +14,8 @@ shape = SubResource("RectangleShape2D_88ka3")
 [node name="Panel" type="Panel" parent="."]
 offset_right = 50.0
 offset_bottom = 50.0
+
+[node name="Sprite2D" type="Sprite2D" parent="Panel"]
+position = Vector2(25, 25)
+scale = Vector2(0.1875, 0.1875)
+texture = ExtResource("1_0bxuw")

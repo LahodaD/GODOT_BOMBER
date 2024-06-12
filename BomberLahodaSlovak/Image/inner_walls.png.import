@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://drxs3xncd1cud"
-path="res://.godot/imported/bomb_explosion_signal.png-b203c084ec5f72058aa57c4c76bb62cc.ctex"
+uid="uid://rqqfjhi74k1u"
+path="res://.godot/imported/inner_walls.png-81385e493430a245178f6de7bba295de.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Image/bomb_explosion_signal.png"
-dest_files=["res://.godot/imported/bomb_explosion_signal.png-b203c084ec5f72058aa57c4c76bb62cc.ctex"]
+source_file="res://Image/inner_walls.png"
+dest_files=["res://.godot/imported/inner_walls.png-81385e493430a245178f6de7bba295de.ctex"]
 
 [params]
 
