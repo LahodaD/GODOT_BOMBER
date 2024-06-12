@@ -6,8 +6,8 @@
 [ext_resource type="Script" path="res://Scripts/Player2Script.cs" id="4_5okkm"]
 [ext_resource type="Texture2D" uid="uid://dpbvoa0yqng04" path="res://Image/player2.png" id="5_c8xmw"]
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_sqbli"]
-size = Vector2(42, 40)
+[sub_resource type="CircleShape2D" id="CircleShape2D_j178j"]
+radius = 22.02
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_xjomj"]
 radius = 22.0227
@@ -23,11 +23,11 @@ script = ExtResource("2_r23k3")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Player"]
 position = Vector2(1, -1)
-shape = SubResource("RectangleShape2D_sqbli")
+shape = SubResource("CircleShape2D_j178j")
 
 [node name="Sprite2D" type="Sprite2D" parent="Player"]
-position = Vector2(1, -9)
-scale = Vector2(0.226563, 0.21875)
+position = Vector2(1, -8)
+scale = Vector2(0.227, 0.211)
 texture = ExtResource("3_fpax7")
 
 [node name="Player2" type="CharacterBody2D" parent="."]
@@ -38,6 +38,6 @@ script = ExtResource("4_5okkm")
 shape = SubResource("CircleShape2D_xjomj")
 
 [node name="Sprite2D" type="Sprite2D" parent="Player2"]
-position = Vector2(2, -10)
+position = Vector2(-2.38419e-07, -8)
 scale = Vector2(0.227, 0.227)
 texture = ExtResource("5_c8xmw")
