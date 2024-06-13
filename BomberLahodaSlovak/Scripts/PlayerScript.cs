@@ -125,6 +125,39 @@ public partial class PlayerScript : CharacterBody2D
 			GD.Print("horE2");
 		}
 		
+		Vector2 bombPos = bombPosition;
+		Vector2 newVec = new Vector2(0,0);
+		
+		newVec = new Vector2(bombPos.X + 50, bombPos.Y);
+		if (!IsStoneCollision(newVec) && !IsBreakStoneCollision(newVec)) {
+			
+			IsPleyer1Death(newVec);
+			enemy.IsPleyer2Death(newVec);
+		} 
+		
+		newVec = new Vector2(bombPos.X - 50, bombPos.Y);
+		if (!IsStoneCollision(newVec) && !IsBreakStoneCollision(newVec)) {
+			
+			IsPleyer1Death(newVec);
+			enemy.IsPleyer2Death(newVec);
+		}
+		
+		
+		
+		newVec = new Vector2(bombPos.X, bombPos.Y + 50);
+		if (!IsStoneCollision(newVec) && !IsBreakStoneCollision(newVec)) {
+			
+			IsPleyer1Death(newVec);
+			enemy.IsPleyer2Death(newVec);
+		}
+		
+		newVec = new Vector2(bombPos.X, bombPos.Y - 50);
+		if (!IsStoneCollision(newVec) && !IsBreakStoneCollision(newVec)) {
+			
+			IsPleyer1Death(newVec);
+			enemy.IsPleyer2Death(newVec);
+		}
+		
 		GetNode<Timer>("explosionTimer").Stop();
 	}
 	

@@ -38,7 +38,6 @@ wait_time = 3.0
 autostart = true
 
 [node name="explosionTimer" type="Timer" parent="Player"]
-wait_time = 0.5
 autostart = true
 
 [node name="Player2" type="CharacterBody2D" parent="."]
@@ -60,7 +59,6 @@ wait_time = 3.0
 autostart = true
 
 [node name="explosionTimer2" type="Timer" parent="Player2"]
-wait_time = 0.5
 autostart = true
 
 [node name="Borders" parent="." instance=ExtResource("6_y4gnr")]
