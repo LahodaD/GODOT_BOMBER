@@ -1,10 +1,11 @@
-[gd_scene load_steps=8 format=3 uid="uid://dvfcxx5dtp4c6"]
+[gd_scene load_steps=9 format=3 uid="uid://dvfcxx5dtp4c6"]
 
 [ext_resource type="Script" path="res://Scripts/Background.cs" id="1_2l10v"]
 [ext_resource type="Script" path="res://Scripts/PlayerScript.cs" id="2_r23k3"]
 [ext_resource type="Texture2D" uid="uid://blivw61lhtsyn" path="res://Image/player1.png" id="3_fpax7"]
 [ext_resource type="Script" path="res://Scripts/Player2Script.cs" id="4_5okkm"]
 [ext_resource type="Texture2D" uid="uid://dpbvoa0yqng04" path="res://Image/player2.png" id="5_c8xmw"]
+[ext_resource type="PackedScene" uid="uid://rw81x7y8lm35" path="res://Scene/borders.tscn" id="6_y4gnr"]
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_ltwm0"]
 radius = 20.25
@@ -19,7 +20,7 @@ radius = 17.6777
 script = ExtResource("1_2l10v")
 
 [node name="Player" type="CharacterBody2D" parent="."]
-position = Vector2(25, 25)
+position = Vector2(125, 125)
 scale = Vector2(0.8, 0.8)
 script = ExtResource("2_r23k3")
 
@@ -37,11 +38,11 @@ wait_time = 5.0
 autostart = true
 
 [node name="explosionTimer" type="Timer" parent="Player"]
-wait_time = 2.0
+wait_time = 0.5
 autostart = true
 
 [node name="Player2" type="CharacterBody2D" parent="."]
-position = Vector2(1125, 615)
+position = Vector2(1025, 525)
 scale = Vector2(0.8, 0.8)
 script = ExtResource("4_5okkm")
 
@@ -59,8 +60,218 @@ wait_time = 5.0
 autostart = true
 
 [node name="explosionTimer2" type="Timer" parent="Player2"]
-wait_time = 2.0
+wait_time = 0.5
 autostart = true
+
+[node name="Borders" parent="." instance=ExtResource("6_y4gnr")]
+position = Vector2(27, 24)
+
+[node name="Borders2" parent="." instance=ExtResource("6_y4gnr")]
+position = Vector2(74, 24)
+
+[node name="Borders3" parent="." instance=ExtResource("6_y4gnr")]
+position = Vector2(126, 24)
+
+[node name="Borders4" parent="." instance=ExtResource("6_y4gnr")]
+position = Vector2(173, 24)
+
+[node name="Borders5" parent="." instance=ExtResource("6_y4gnr")]
+position = Vector2(219, 24)
+
+[node name="Borders6" parent="." instance=ExtResource("6_y4gnr")]
+position = Vector2(266, 24)
+
+[node name="Borders7" parent="." instance=ExtResource("6_y4gnr")]
+position = Vector2(318, 24)
+
+[node name="Borders8" parent="." instance=ExtResource("6_y4gnr")]
+position = Vector2(365, 24)
+
+[node name="Borders9" parent="." instance=ExtResource("6_y4gnr")]
+position = Vector2(411, 24)
+
+[node name="Borders10" parent="." instance=ExtResource("6_y4gnr")]
+position = Vector2(458, 24)
+
+[node name="Borders11" parent="." instance=ExtResource("6_y4gnr")]
+position = Vector2(510, 24)
+
+[node name="Borders12" parent="." instance=ExtResource("6_y4gnr")]
+position = Vector2(557, 24)
+
+[node name="Borders13" parent="." instance=ExtResource("6_y4gnr")]
+position = Vector2(603, 24)
+
+[node name="Borders14" parent="." instance=ExtResource("6_y4gnr")]
+position = Vector2(650, 24)
+
+[node name="Borders15" parent="." instance=ExtResource("6_y4gnr")]
+position = Vector2(702, 24)
+
+[node name="Borders16" parent="." instance=ExtResource("6_y4gnr")]
+position = Vector2(749, 24)
+
+[node name="Borders17" parent="." instance=ExtResource("6_y4gnr")]
+position = Vector2(794, 24)
+
+[node name="Borders18" parent="." instance=ExtResource("6_y4gnr")]
+position = Vector2(846, 24)
+
+[node name="Borders19" parent="." instance=ExtResource("6_y4gnr")]
+position = Vector2(893, 24)
+
+[node name="Borders20" parent="." instance=ExtResource("6_y4gnr")]
+position = Vector2(939, 24)
+
+[node name="Borders21" parent="." instance=ExtResource("6_y4gnr")]
+position = Vector2(986, 24)
+
+[node name="Borders22" parent="." instance=ExtResource("6_y4gnr")]
+position = Vector2(1038, 24)
+
+[node name="Borders23" parent="." instance=ExtResource("6_y4gnr")]
+position = Vector2(1085, 24)
+
+[node name="Borders24" parent="." instance=ExtResource("6_y4gnr")]
+position = Vector2(1131, 24)
+
+[node name="Borders25" parent="." instance=ExtResource("6_y4gnr")]
+position = Vector2(27, 624)
+
+[node name="Borders49" parent="." instance=ExtResource("6_y4gnr")]
+position = Vector2(27, 573)
+
+[node name="Borders50" parent="." instance=ExtResource("6_y4gnr")]
+position = Vector2(27, 522)
+
+[node name="Borders51" parent="." instance=ExtResource("6_y4gnr")]
+position = Vector2(27, 471)
+
+[node name="Borders52" parent="." instance=ExtResource("6_y4gnr")]
+position = Vector2(27, 421)
+
+[node name="Borders53" parent="." instance=ExtResource("6_y4gnr")]
+position = Vector2(27, 370)
+
+[node name="Borders54" parent="." instance=ExtResource("6_y4gnr")]
+position = Vector2(27, 319)
+
+[node name="Borders55" parent="." instance=ExtResource("6_y4gnr")]
+position = Vector2(27, 268)
+
+[node name="Borders56" parent="." instance=ExtResource("6_y4gnr")]
+position = Vector2(27, 221)
+
+[node name="Borders57" parent="." instance=ExtResource("6_y4gnr")]
+position = Vector2(27, 170)
+
+[node name="Borders58" parent="." instance=ExtResource("6_y4gnr")]
+position = Vector2(27, 119)
+
+[node name="Borders59" parent="." instance=ExtResource("6_y4gnr")]
+position = Vector2(27, 68)
+
+[node name="Borders60" parent="." instance=ExtResource("6_y4gnr")]
+position = Vector2(1126, 573)
+
+[node name="Borders61" parent="." instance=ExtResource("6_y4gnr")]
+position = Vector2(1126, 522)
+
+[node name="Borders62" parent="." instance=ExtResource("6_y4gnr")]
+position = Vector2(1126, 471)
+
+[node name="Borders63" parent="." instance=ExtResource("6_y4gnr")]
+position = Vector2(1126, 421)
+
+[node name="Borders64" parent="." instance=ExtResource("6_y4gnr")]
+position = Vector2(1126, 370)
+
+[node name="Borders65" parent="." instance=ExtResource("6_y4gnr")]
+position = Vector2(1126, 319)
+
+[node name="Borders66" parent="." instance=ExtResource("6_y4gnr")]
+position = Vector2(1126, 268)
+
+[node name="Borders67" parent="." instance=ExtResource("6_y4gnr")]
+position = Vector2(1126, 221)
+
+[node name="Borders68" parent="." instance=ExtResource("6_y4gnr")]
+position = Vector2(1126, 170)
+
+[node name="Borders69" parent="." instance=ExtResource("6_y4gnr")]
+position = Vector2(1126, 119)
+
+[node name="Borders70" parent="." instance=ExtResource("6_y4gnr")]
+position = Vector2(1126, 68)
+
+[node name="Borders26" parent="." instance=ExtResource("6_y4gnr")]
+position = Vector2(74, 624)
+
+[node name="Borders27" parent="." instance=ExtResource("6_y4gnr")]
+position = Vector2(126, 624)
+
+[node name="Borders28" parent="." instance=ExtResource("6_y4gnr")]
+position = Vector2(173, 624)
+
+[node name="Borders29" parent="." instance=ExtResource("6_y4gnr")]
+position = Vector2(219, 624)
+
+[node name="Borders30" parent="." instance=ExtResource("6_y4gnr")]
+position = Vector2(266, 624)
+
+[node name="Borders31" parent="." instance=ExtResource("6_y4gnr")]
+position = Vector2(318, 624)
+
+[node name="Borders32" parent="." instance=ExtResource("6_y4gnr")]
+position = Vector2(365, 624)
+
+[node name="Borders33" parent="." instance=ExtResource("6_y4gnr")]
+position = Vector2(411, 624)
+
+[node name="Borders34" parent="." instance=ExtResource("6_y4gnr")]
+position = Vector2(458, 624)
+
+[node name="Borders35" parent="." instance=ExtResource("6_y4gnr")]
+position = Vector2(510, 624)
+
+[node name="Borders36" parent="." instance=ExtResource("6_y4gnr")]
+position = Vector2(557, 624)
+
+[node name="Borders37" parent="." instance=ExtResource("6_y4gnr")]
+position = Vector2(603, 624)
+
+[node name="Borders38" parent="." instance=ExtResource("6_y4gnr")]
+position = Vector2(650, 624)
+
+[node name="Borders39" parent="." instance=ExtResource("6_y4gnr")]
+position = Vector2(702, 624)
+
+[node name="Borders40" parent="." instance=ExtResource("6_y4gnr")]
+position = Vector2(749, 624)
+
+[node name="Borders41" parent="." instance=ExtResource("6_y4gnr")]
+position = Vector2(794, 624)
+
+[node name="Borders42" parent="." instance=ExtResource("6_y4gnr")]
+position = Vector2(846, 624)
+
+[node name="Borders43" parent="." instance=ExtResource("6_y4gnr")]
+position = Vector2(893, 624)
+
+[node name="Borders44" parent="." instance=ExtResource("6_y4gnr")]
+position = Vector2(939, 624)
+
+[node name="Borders45" parent="." instance=ExtResource("6_y4gnr")]
+position = Vector2(986, 624)
+
+[node name="Borders46" parent="." instance=ExtResource("6_y4gnr")]
+position = Vector2(1038, 624)
+
+[node name="Borders47" parent="." instance=ExtResource("6_y4gnr")]
+position = Vector2(1085, 624)
+
+[node name="Borders48" parent="." instance=ExtResource("6_y4gnr")]
+position = Vector2(1131, 624)
 
 [connection signal="timeout" from="Player/Timer" to="Player" method="OnBombTimerTimeout"]
 [connection signal="timeout" from="Player/explosionTimer" to="Player" method="OnExplTimerTimeout"]

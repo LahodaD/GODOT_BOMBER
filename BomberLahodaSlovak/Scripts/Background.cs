@@ -21,7 +21,7 @@ public partial class Background : Sprite2D
 	}
 
 	private void GenerateStone() {
-		for (int row = 0; row < 7; row++) {
+		for (int row = 0; row < 6; row++) {
 			for (int col = 0; col < 11; col++) {
 				Vector2 pos = new Vector2(col * cellSize + cellSize / 2, row * cellSize + cellSize / 2);
 				stoneList.Add(pos);
@@ -38,8 +38,8 @@ public partial class Background : Sprite2D
 		List<Vector2> freePositions = new List<Vector2>();
 
 		// Najdi volné pozice mezi kameny
-		for (int row = 0; row < 7*2; row++) {
-			for (int col = 0; col < 11*2; col++) {
+		for (int row = 2; row < 6*2 - 3; row++) {
+			for (int col = 2; col < 10*2 - 1; col++) {
 				// Kontrolujeme čtyři možné pozice kolem každého kamene (nahoře, dole, vlevo, vpravo)
 				Vector2[] possiblePositions = new Vector2[] {
 					new Vector2(col * cellSize/2 + cellSize / 2 - cellSize / 2, row * cellSize/2 + cellSize / 2),
@@ -107,7 +107,7 @@ public partial class Background : Sprite2D
 
 	public override void _Ready() {
 		GenerateStone();
-		GenerateBreakStone(20); // Generuje 10 rozbitných kamenů
+		GenerateBreakStone(90); // Generuje 10 rozbitných kamenů
 	}
 
 	public override void _Process(double delta) {
