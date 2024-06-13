@@ -53,12 +53,18 @@ public partial class Player2Script : CharacterBody2D
 	}
 	
 	private void CreateBomb(Vector2 pos) {
-		PackedScene bombScene = (PackedScene)ResourceLoader.Load("res://Scene/bomb.tscn");
-		bombItem = (CharacterBody2D)bombScene.Instantiate();
-		bombItem.Position = pos;
-		Owner.AddChild(bombItem);
-		
-		GetNode<Timer>("Timer2").Start();
+	    PackedScene bombScene = (PackedScene)ResourceLoader.Load("res://Scene/bomb.tscn");
+	    bombItem = (CharacterBody2D)bombScene.Instantiate();
+	    bombItem.Position = pos;
+	    Owner.AddChild(bombItem);
+
+	    // Start animation of the bomb
+	    AnimatedSprite2D animatedSprite = bombItem.GetNode<AnimatedSprite2D>("AnimatedSprite2D");
+	    if (animatedSprite != null) {
+	        animatedSprite.Play("default"); // Replace "your_animation_name" with the actual animation name
+	    }
+
+	    GetNode<Timer>("Timer2").Start();
 	}
 	
 	private Vector2 CreateBaseBomb()

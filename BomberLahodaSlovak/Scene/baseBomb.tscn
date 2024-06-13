@@ -3,6 +3,6 @@
 [ext_resource type="Texture2D" uid="uid://cnwqdcn4ghhuj" path="res://Image/bomb_default.png" id="1_2okuw"]
 
 [node name="BaseBomb" type="Sprite2D"]
-position = Vector2(25, 25)
-scale = Vector2(0.3, 0.298)
+position = Vector2(3.69549e-06, 0)
+scale = Vector2(0.15, 0.149)
 texture = ExtResource("1_2okuw")

@@ -18,6 +18,9 @@ animations = [{
 "texture": ExtResource("1_he8lp")
 }, {
 "duration": 1.0,
+"texture": ExtResource("1_he8lp")
+}, {
+"duration": 1.0,
 "texture": ExtResource("2_wbn3s")
 }, {
 "duration": 1.0,
@@ -61,7 +64,7 @@ animations = [{
 }],
 "loop": true,
 "name": &"default",
-"speed": 3.0
+"speed": 5.0
 }]
 
 [node name="Bomb" type="CharacterBody2D"]
