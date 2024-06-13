@@ -1,0 +1,61 @@
+[gd_scene load_steps=13 format=3 uid="uid://bqdq4ynkg88s"]
+
+[ext_resource type="Texture2D" uid="uid://dctce6h1ecmv8" path="res://Image/destroyed_wall1.png" id="1_r21yx"]
+[ext_resource type="Texture2D" uid="uid://ctwryper1p1gi" path="res://Image/destroyed_wall2.png" id="2_nhgqr"]
+[ext_resource type="Texture2D" uid="uid://dvioddghvg22p" path="res://Image/destroyed_wall3.png" id="3_1oluy"]
+[ext_resource type="Texture2D" uid="uid://cexml6w4olee7" path="res://Image/destroyed_wall4.png" id="4_elrnh"]
+[ext_resource type="Texture2D" uid="uid://ib50b6s7xf30" path="res://Image/destroyed_wall5.png" id="5_j0b77"]
+[ext_resource type="Texture2D" uid="uid://wfkt0l45w5x0" path="res://Image/destroyed_wall6.png" id="6_ncdwn"]
+[ext_resource type="Texture2D" uid="uid://cacm7qte8wlw5" path="res://Image/destroyed_wall7.png" id="7_b2dg2"]
+[ext_resource type="Texture2D" uid="uid://saew15j5euh1" path="res://Image/destroyed_wall8.png" id="8_4rkdi"]
+[ext_resource type="Texture2D" uid="uid://db1ihffalhw1q" path="res://Image/destroyed_wall9.png" id="9_50akh"]
+[ext_resource type="Texture2D" uid="uid://bqnvi2x86s4x5" path="res://Image/destroyed_wall10.png" id="10_j2stx"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_7c6n6"]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_dmii8"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("1_r21yx")
+}, {
+"duration": 1.0,
+"texture": ExtResource("2_nhgqr")
+}, {
+"duration": 1.0,
+"texture": ExtResource("3_1oluy")
+}, {
+"duration": 1.0,
+"texture": ExtResource("4_elrnh")
+}, {
+"duration": 1.0,
+"texture": ExtResource("5_j0b77")
+}, {
+"duration": 1.0,
+"texture": ExtResource("6_ncdwn")
+}, {
+"duration": 1.0,
+"texture": ExtResource("7_b2dg2")
+}, {
+"duration": 1.0,
+"texture": ExtResource("8_4rkdi")
+}, {
+"duration": 1.0,
+"texture": ExtResource("9_50akh")
+}, {
+"duration": 1.0,
+"texture": ExtResource("10_j2stx")
+}],
+"loop": true,
+"name": &"wall",
+"speed": 10.0
+}]
+
+[node name="WallDestruction" type="CharacterBody2D"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("RectangleShape2D_7c6n6")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+sprite_frames = SubResource("SpriteFrames_dmii8")
+animation = &"wall"
