@@ -56,6 +56,12 @@ public partial class PlayerScript : CharacterBody2D
 		bombItem = (CharacterBody2D)bombScene.Instantiate();
 		bombItem.Position = pos;
 		Owner.AddChild(bombItem);
+
+		// Start animation of the bomb
+	    AnimatedSprite2D animatedSprite = bombItem.GetNode<AnimatedSprite2D>("AnimatedSprite2D");
+	    if (animatedSprite != null) {
+	        animatedSprite.Play("default");
+	    }
 		
 		GetNode<Timer>("Timer").Start();
 	}

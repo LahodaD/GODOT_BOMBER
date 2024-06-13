@@ -1,7 +1,7 @@
 [gd_scene load_steps=5 format=3 uid="uid://dxmu83aqo26hq"]
 
-[ext_resource type="Texture2D" uid="uid://betdwpnnf8ubu" path="res://Image/bomberStart.jpg" id="1_aw706"]
 [ext_resource type="Script" path="res://Scripts/MainMenu.cs" id="1_krkpa"]
+[ext_resource type="Texture2D" uid="uid://6a5wo1w0oedm" path="res://Image/backgroung.png" id="2_at5lj"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_8olyl"]
 
@@ -25,7 +25,7 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
-color = Color(0, 0, 0, 1)
+color = Color(0.0823529, 0.0823529, 0.0823529, 1)
 
 [node name="VBoxContainer" type="VBoxContainer" parent="CenterContainer"]
 layout_mode = 1
@@ -46,7 +46,7 @@ theme_override_constants/separation = 15
 self_modulate = Color(0.494118, 0.494118, 0.494118, 1)
 position = Vector2(171.25, 144.25)
 scale = Vector2(0.630371, 0.630371)
-texture = ExtResource("1_aw706")
+texture = ExtResource("2_at5lj")
 
 [node name="play" type="Button" parent="CenterContainer/VBoxContainer"]
 layout_mode = 2
