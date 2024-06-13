@@ -38,18 +38,22 @@ public partial class Background : Sprite2D
 		List<Vector2> freePositions = new List<Vector2>();
 
 		// Najdi volné pozice mezi kameny
-		for (int row = 2; row < 6*2 - 3; row++) {
-			for (int col = 2; col < 10*2 - 1; col++) {
+		for (int row = 0; row < 6 * 2 -1; row++) {
+			for (int col = 0; col < 10 * 2 - 1; col++) {
 				// Kontrolujeme čtyři možné pozice kolem každého kamene (nahoře, dole, vlevo, vpravo)
 				Vector2[] possiblePositions = new Vector2[] {
-					new Vector2(col * cellSize/2 + cellSize / 2 - cellSize / 2, row * cellSize/2 + cellSize / 2),
-					new Vector2(col * cellSize/2 + cellSize / 2 + cellSize / 2, row * cellSize/2 + cellSize / 2),
-					new Vector2(col * cellSize/2 + cellSize / 2, row * cellSize/2 + cellSize / 2 - cellSize / 2),
-					new Vector2(col * cellSize/2 + cellSize / 2, row * cellSize/2 + cellSize / 2 + cellSize / 2)
+					new Vector2(col * cellSize / 2 + cellSize / 2 - cellSize / 2, row * cellSize / 2 + cellSize / 2),
+					new Vector2(col * cellSize / 2 + cellSize / 2 + cellSize / 2, row * cellSize / 2 + cellSize / 2),
+					new Vector2(col * cellSize / 2 + cellSize / 2, row * cellSize / 2 + cellSize / 2 - cellSize / 2),
+					new Vector2(col * cellSize / 2 + cellSize / 2, row * cellSize / 2 + cellSize / 2 + cellSize / 2)
 				};
 
 				foreach (var pos in possiblePositions) {
-					if (!stoneList.Contains(pos) && pos.X >= 0 && pos.Y >= 0 && pos.X < mapWidth && pos.Y < mapHeight) {
+				// Zkontroluj, jestli pozice není v levém horním rohu o velikosti 4x4 bloky
+				// a jestli není v pravém spodním rohu o velikosti 4x4 bloky
+					if (!stoneList.Contains(pos) && pos.X >= 0 && pos.Y >= 0 && pos.X < mapWidth && pos.Y < mapHeight &&
+						!(pos.X < 2 * cellSize && pos.Y < 2 * cellSize) && 
+						!(pos.X > 1150 - 2 * cellSize && pos.Y > 650 - 2 * cellSize)) {
 						freePositions.Add(pos);
 					}
 				}
@@ -75,7 +79,6 @@ public partial class Background : Sprite2D
 			AddChild(breakStoneItem);
 		}
 	}
-	
 	public void DestroySpriteAtPosition(Vector2 position)
 	{
 		foreach (Node child in GetChildren())
@@ -107,7 +110,7 @@ public partial class Background : Sprite2D
 
 	public override void _Ready() {
 		GenerateStone();
-		GenerateBreakStone(90); // Generuje 10 rozbitných kamenů
+		GenerateBreakStone(120); // Generuje 10 rozbitných kamenů
 	}
 
 	public override void _Process(double delta) {

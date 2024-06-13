@@ -34,7 +34,7 @@ scale = Vector2(0.227, 0.211)
 texture = ExtResource("3_fpax7")
 
 [node name="Timer" type="Timer" parent="Player"]
-wait_time = 5.0
+wait_time = 3.0
 autostart = true
 
 [node name="explosionTimer" type="Timer" parent="Player"]
@@ -56,7 +56,7 @@ scale = Vector2(0.227, 0.227)
 texture = ExtResource("5_c8xmw")
 
 [node name="Timer2" type="Timer" parent="Player2"]
-wait_time = 5.0
+wait_time = 3.0
 autostart = true
 
 [node name="explosionTimer2" type="Timer" parent="Player2"]
