@@ -6,24 +6,26 @@
 size = Vector2(50, 50)
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_2txgg"]
+bg_color = Color(0.6, 0.6, 0.6, 0)
 border_width_left = 2
 border_width_top = 2
 border_width_right = 2
 border_width_bottom = 2
-border_color = Color(0.231373, 0.231373, 0.231373, 1)
+border_color = Color(0.290196, 0.298039, 0.305882, 1)
 
 [node name="BreakStone" type="CharacterBody2D"]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-position = Vector2(25, 25)
 shape = SubResource("RectangleShape2D_mxp1b")
 
 [node name="Panel" type="Panel" parent="."]
-offset_right = 50.0
-offset_bottom = 50.0
+offset_left = -25.0
+offset_top = -25.0
+offset_right = 25.0
+offset_bottom = 25.0
 theme_override_styles/panel = SubResource("StyleBoxFlat_2txgg")
 
 [node name="Sprite2D" type="Sprite2D" parent="Panel"]
 position = Vector2(25, 25)
-scale = Vector2(0.1875, 0.1875)
+scale = Vector2(0.1875, 0.195313)
 texture = ExtResource("1_lrorl")
