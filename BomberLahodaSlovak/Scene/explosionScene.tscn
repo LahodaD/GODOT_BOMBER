@@ -1,0 +1,8 @@
+[gd_scene load_steps=2 format=3 uid="uid://d4dhbbla3lxao"]
+
+[ext_resource type="Texture2D" uid="uid://c2xe8f6hf63qc" path="res://Image/bomb_explosion.png" id="1_0ppho"]
+
+[node name="ExplosionScene" type="Sprite2D"]
+position = Vector2(25, 25)
+scale = Vector2(0.2, 0.2)
+texture = ExtResource("1_0ppho")

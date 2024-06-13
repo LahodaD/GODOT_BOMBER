@@ -6,11 +6,12 @@
 [ext_resource type="Script" path="res://Scripts/Player2Script.cs" id="4_5okkm"]
 [ext_resource type="Texture2D" uid="uid://dpbvoa0yqng04" path="res://Image/player2.png" id="5_c8xmw"]
 
-[sub_resource type="CircleShape2D" id="CircleShape2D_j178j"]
-radius = 22.02
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_ltwm0"]
+radius = 20.25
+height = 54.0
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_xjomj"]
-radius = 22.0227
+radius = 17.6777
 
 [node name="Game" type="Node"]
 
@@ -19,25 +20,50 @@ script = ExtResource("1_2l10v")
 
 [node name="Player" type="CharacterBody2D" parent="."]
 position = Vector2(25, 25)
+scale = Vector2(0.8, 0.8)
 script = ExtResource("2_r23k3")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Player"]
-position = Vector2(1, -1)
-shape = SubResource("CircleShape2D_j178j")
+
+position = Vector2(1, -7)
+shape = SubResource("CapsuleShape2D_ltwm0")
 
 [node name="Sprite2D" type="Sprite2D" parent="Player"]
 position = Vector2(1, -8)
 scale = Vector2(0.227, 0.211)
 texture = ExtResource("3_fpax7")
 
+[node name="Timer" type="Timer" parent="Player"]
+wait_time = 5.0
+autostart = true
+
+[node name="explosionTimer" type="Timer" parent="Player"]
+wait_time = 2.0
+autostart = true
+
 [node name="Player2" type="CharacterBody2D" parent="."]
-position = Vector2(1124, 614)
+position = Vector2(1125, 615)
+scale = Vector2(0.8, 0.8)
 script = ExtResource("4_5okkm")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Player2"]
+position = Vector2(3.75, -3.75)
 shape = SubResource("CircleShape2D_xjomj")
 
 [node name="Sprite2D" type="Sprite2D" parent="Player2"]
 position = Vector2(-2.38419e-07, -8)
 scale = Vector2(0.227, 0.227)
 texture = ExtResource("5_c8xmw")
+
+[node name="Timer2" type="Timer" parent="Player2"]
+wait_time = 5.0
+autostart = true
+
+[node name="explosionTimer2" type="Timer" parent="Player2"]
+wait_time = 2.0
+autostart = true
+
+[connection signal="timeout" from="Player/Timer" to="Player" method="OnBombTimerTimeout"]
+[connection signal="timeout" from="Player/explosionTimer" to="Player" method="OnExplTimerTimeout"]
+[connection signal="timeout" from="Player2/Timer2" to="Player2" method="_on_timer_2_timeout"]
+[connection signal="timeout" from="Player2/explosionTimer2" to="Player2" method="_on_explosion_timer_2_timeout"]

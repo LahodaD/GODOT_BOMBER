@@ -1,0 +1,8 @@
+[gd_scene load_steps=2 format=3 uid="uid://c3hcy2ckgbfd8"]
+
+[ext_resource type="Texture2D" uid="uid://3idf31tcjk8s" path="res://Image/explosion_vertical.png" id="1_rot1o"]
+
+[node name="VerticalExplosion" type="Sprite2D"]
+position = Vector2(25, 25)
+scale = Vector2(0.2, 0.2)
+texture = ExtResource("1_rot1o")

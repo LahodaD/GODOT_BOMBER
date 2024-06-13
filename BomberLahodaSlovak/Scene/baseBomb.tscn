@@ -1,0 +1,8 @@
+[gd_scene load_steps=2 format=3 uid="uid://ckp6x4b1cngih"]
+
+[ext_resource type="Texture2D" uid="uid://cnwqdcn4ghhuj" path="res://Image/bomb_default.png" id="1_2okuw"]
+
+[node name="BaseBomb" type="Sprite2D"]
+position = Vector2(25, 25)
+scale = Vector2(0.3, 0.298)
+texture = ExtResource("1_2okuw")
