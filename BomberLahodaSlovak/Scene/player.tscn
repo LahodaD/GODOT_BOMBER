@@ -9,8 +9,6 @@ size = Vector2(149, 149)
 [node name="Player" type="CharacterBody2D"]
 position = Vector2(577, 314)
 script = ExtResource("1_rmp7j")
-Speed = null
-PlayerIndex = null
 metadata/_edit_group_ = true
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
