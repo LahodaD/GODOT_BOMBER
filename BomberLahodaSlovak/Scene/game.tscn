@@ -11,7 +11,7 @@ radius = 20.25
 height = 54.0
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_xjomj"]
-radius = 22.0227
+radius = 17.6777
 
 [node name="Game" type="Node"]
 
@@ -34,15 +34,19 @@ texture = ExtResource("3_fpax7")
 
 [node name="Timer" type="Timer" parent="Player"]
 wait_time = 5.0
+autostart = true
 
 [node name="explosionTimer" type="Timer" parent="Player"]
 wait_time = 2.0
+autostart = true
 
 [node name="Player2" type="CharacterBody2D" parent="."]
-position = Vector2(1124, 614)
+position = Vector2(1125, 615)
+scale = Vector2(0.8, 0.8)
 script = ExtResource("4_5okkm")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Player2"]
+position = Vector2(3.75, -3.75)
 shape = SubResource("CircleShape2D_xjomj")
 
 [node name="Sprite2D" type="Sprite2D" parent="Player2"]
@@ -50,5 +54,15 @@ position = Vector2(2, -10)
 scale = Vector2(0.227, 0.227)
 texture = ExtResource("5_c8xmw")
 
+[node name="Timer2" type="Timer" parent="Player2"]
+wait_time = 5.0
+autostart = true
+
+[node name="explosionTimer2" type="Timer" parent="Player2"]
+wait_time = 2.0
+autostart = true
+
 [connection signal="timeout" from="Player/Timer" to="Player" method="OnBombTimerTimeout"]
 [connection signal="timeout" from="Player/explosionTimer" to="Player" method="OnExplTimerTimeout"]
+[connection signal="timeout" from="Player2/Timer2" to="Player2" method="_on_timer_2_timeout"]
+[connection signal="timeout" from="Player2/explosionTimer2" to="Player2" method="_on_explosion_timer_2_timeout"]

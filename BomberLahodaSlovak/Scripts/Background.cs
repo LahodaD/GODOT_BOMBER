@@ -12,6 +12,14 @@ public partial class Background : Sprite2D
 	private List<Vector2> stoneList = new List<Vector2>();
 	private List<Vector2> breakStoneList = new List<Vector2>();
 
+	public List<Vector2> getStoneList() {
+		return stoneList;
+	}
+	
+	public List<Vector2> getBreakStoneList() {
+		return breakStoneList;
+	}
+
 	private void GenerateStone() {
 		for (int row = 0; row < 7; row++) {
 			for (int col = 0; col < 11; col++) {
@@ -67,12 +75,39 @@ public partial class Background : Sprite2D
 			AddChild(breakStoneItem);
 		}
 	}
+	
+	public void DestroySpriteAtPosition(Vector2 position)
+	{
+		foreach (Node child in GetChildren())
+		{
+			if (child is CharacterBody2D sprite && sprite.Position == position)
+			{
+				breakStoneList.RemoveAt(breakStoneList.IndexOf(position));
+				GD.Print("Dostal jsem se SEM");
+				sprite.QueueFree();
+				if (sprite.IsQueuedForDeletion())
+				{
+					GD.Print("Sprite is queued for deletion.");
+				}
+				else
+				{
+					GD.Print("Sprite is NOT queued for deletion.");
+				}
+				
+				GD.Print(breakStoneList.Count);
+				GD.Print(breakStoneList.IndexOf(position));
+				GD.Print(breakStoneList.Count);
+				foreach(Vector2 v in breakStoneList) {
+					GD.Print(v);
+				}
+				break;
+			}
+		}
+	}
 
 	public override void _Ready() {
 		GenerateStone();
-		GenerateBreakStone(200); // Generuje 10 rozbitných kamenů
-		
-		
+		GenerateBreakStone(20); // Generuje 10 rozbitných kamenů
 	}
 
 	public override void _Process(double delta) {
