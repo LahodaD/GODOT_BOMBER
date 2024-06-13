@@ -145,6 +145,7 @@ public partial class Player2Script : CharacterBody2D
 			horExpl.Position = newVec;
 			Owner.AddChild(horExpl);
 			IsPleyer2Death(newVec);
+			enemy.IsPleyer1Death(newVec);
 		} else {
 			newVec.X -= 25;
 			newVec.Y -= 25;
@@ -157,6 +158,7 @@ public partial class Player2Script : CharacterBody2D
 			horExpl2.Position = newVec;
 			Owner.AddChild(horExpl2);
 			IsPleyer2Death(newVec);
+			enemy.IsPleyer1Death(newVec);
 		}else {
 			newVec.X -= 25;
 			newVec.Y -= 25;
@@ -171,6 +173,7 @@ public partial class Player2Script : CharacterBody2D
 			verExpl.Position = newVec;
 			Owner.AddChild(verExpl);
 			IsPleyer2Death(newVec);
+			enemy.IsPleyer1Death(newVec);
 		}else {
 			newVec.X -= 25;
 			newVec.Y -= 25;
@@ -183,6 +186,7 @@ public partial class Player2Script : CharacterBody2D
 			verExpl2.Position = newVec;
 			Owner.AddChild(verExpl2);
 			IsPleyer2Death(newVec);
+			enemy.IsPleyer1Death(newVec);
 		}else {
 			newVec.X -= 25;
 			newVec.Y -= 25;
@@ -221,14 +225,12 @@ public partial class Player2Script : CharacterBody2D
 	}
 	
 	public bool IsPleyer2Death(Vector2 bombPos) {
-		if ((Position.X <= bombPosition.X + 25
-			|| Position.X >= bombPosition.X - 25
-			|| Position.Y <= bombPosition.Y + 25
-			|| Position.Y >= bombPosition.Y - 25)
-			) {
-				GetTree().ChangeSceneToFile($"res://Scene/GameOverWinOne.tscn");
-				return true;
-			}
+		Rect2 explosionArea = new Rect2(bombPos - new Vector2(25, 25), new Vector2(50, 50));
+		if (explosionArea.HasPoint(Position))
+		{
+			GetTree().ChangeSceneToFile($"res://Scene/GameOverWinOne.tscn");
+			return true;
+		}
 		return false;
 	}
 

@@ -224,15 +224,12 @@ public partial class PlayerScript : CharacterBody2D
 	}
 	
 	public bool IsPleyer1Death(Vector2 bombPos) {
-		if ((Position.X <= bombPosition.X + 25
-			|| Position.X >= bombPosition.X - 25
-			|| Position.Y <= bombPosition.Y + 25
-			|| Position.Y >= bombPosition.Y - 25)
-			) {
-				
-				GetTree().ChangeSceneToFile($"res://Scene/GameOverWinTwo.tscn");
-				return true;
-			}
+		Rect2 explosionArea = new Rect2(bombPos - new Vector2(25, 25), new Vector2(50, 50));
+		if (explosionArea.HasPoint(Position))
+		{
+			GetTree().ChangeSceneToFile($"res://Scene/GameOverWinTwo.tscn");
+			return true;
+		}
 		return false;
 	}
 
