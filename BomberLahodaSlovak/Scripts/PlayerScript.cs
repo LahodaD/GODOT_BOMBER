@@ -230,7 +230,7 @@ public partial class PlayerScript : CharacterBody2D
 			|| Position.Y >= bombPosition.Y - 25)
 			) {
 				
-				GetTree().ChangeSceneToFile($"res://Scene/MainMenu.tscn");
+				GetTree().ChangeSceneToFile($"res://Scene/GameOverWinTwo.tscn");
 				return true;
 			}
 		return false;
